@@ -7,10 +7,11 @@ import axios from "axios";
 function Game() {
   const [game, setGame] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [statusOfQustion, setStatusOfQuestion] = useState(false);
+  const [statusOfQuestion, setStatusOfQuestion] = useState(false);
   const [answer, setAnswer] = useState("");
   const { id } = useParams();
   const navigate = useNavigate();
+  
   const fetchData = async () => {
     const res = await axios.get("/api/game/" + id);
     setGame(res.data);
@@ -59,8 +60,9 @@ function Game() {
               navigate("/Menu");
             }
           }}
+
         >
-          Дальше
+          Вперед
         </button>
       </div>
     </div>
