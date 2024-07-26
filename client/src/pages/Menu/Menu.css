@@ -5,20 +5,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  
 }
 
 .game {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  gap: 100px;
-  height: 200px;
-  border: 1px solid rgb(255, 255, 255);
-}
+  gap: 200px;
+  height: 290px;
+  
 
 .one {
-  width: 250px;
-  height: 30px;
+  width: 230px;
+  height: 40px;
   text-align: center;
 }

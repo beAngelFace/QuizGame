@@ -7,7 +7,7 @@ function Menu({ theme }) {
     <div className="menu">
       <div className="game">
         <Link
-          style={{ textDecoration: "none", color: "white", fontSize: "25px" }}
+          style={{ textDecoration: "none", color: "white", fontSize: "31px" }}
           to={`/game/${theme[0].id}`}
         >
           <div className="one">
@@ -15,7 +15,7 @@ function Menu({ theme }) {
           </div>
         </Link>
         <Link
-          style={{ textDecoration: "none", color: "white", fontSize: "25px" }}
+          style={{ textDecoration: "none", color: "white", fontSize: "31px" }}
           to={`/game/${theme[1].id}`}
         >
           <div className="one">
