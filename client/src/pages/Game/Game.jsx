@@ -22,55 +22,45 @@ function Game() {
   }, []);
 
   const handleAnswerChange = (event) => {
+    event.preventDefault();
     setAnswer(event.target.value);
-  };
-
-  const checkAnswer = () => {
-    // Logic to check the answer can be added here
-    setStatusOfQuestion(true);
-    setTimeout(() => {
-      setStatusOfQuestion(false);
-      if (currentQuestion < game.length - 1) {
-        setCurrentQuestion((prev) => prev + 1);
-      } else {
-        alert("Ты ошибся");
-      }
-    }, 2000); // Show the answer for 2 seconds
-  };
-
-  const nextQuestion = () => {
-    if (currentQuestion < game.length - 1) {
-      setCurrentQuestion((prev) => prev + 1);
-    } else {
-      navigate("/Menu");
-    }
   };
 
   return (
     <div className="main">
       <div className="second">
-        <p>Квиз {id}</p>
-        {game[currentQuestion]?.images && (
-          <img className="imgr" src={game[currentQuestion]?.images} alt="Question visual" />
-        )}
+        <p>Викторина{id}</p>
+        <img className="imgr" src={game[currentQuestion]?.images} />
         <div>{game[currentQuestion]?.question}</div>
-        <input 
-          className="input" 
-          value={answer} 
-          onChange={handleAnswerChange} 
+        <input
+          onChange={handleAnswerChange}
+          className="input"
+          placeholder="напиши ответ"
         />
+
         <button
           className="btn"
-          onClick={checkAnswer}
+          onClick={() => {
+            if (answer === game[currentQuestion]?.answer) {
+              setCurrentQuestion((prev) => prev + 1);
+              alert("правильно!");
+            } else {
+              alert("Ты ошибся");
+            }
+          }}
         >
           Проверить
         </button>
-        <div className={`answer ${statusOfQuestion ? 'visible' : ''}`}>
-          {game[currentQuestion]?.answer}
-        </div>
         <button
           className="btn"
-          onClick={nextQuestion}
+          onClick={() => {
+            if (currentQuestion < game.length - 1) {
+              setCurrentQuestion((prev) => prev + 1);
+            } else {
+              navigate("/Menu");
+            }
+          }}
+
         >
           Вперед
         </button>
