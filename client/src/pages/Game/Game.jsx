@@ -21,24 +21,28 @@ function Game() {
   }, []);
 
   const handleAnswerChange = (event) => {
+    event.preventDefault();
     setAnswer(event.target.value);
   };
 
   return (
+    <div className="main">
+      <div className="second">
+        <p>Викторина{id}</p>
+        <img className="imgr" src={game[currentQuestion]?.images} />
+        <div>{game[currentQuestion]?.question}</div>
+        <input
+          onChange={handleAnswerChange}
+          className="input"
+          placeholder="напиши ответ"
+        />
 
-      <div className="main">
-        <div className="second">
-          <p>Викторина{id}</p>
-          <img className='imgr' src={game[currentQuestion]?.images}/>
-          <div>{game[currentQuestion]?.question}</div>
-          <input className="input"></input>
-          
-         
-          <button className='btn' onClick={()=> { 
-            if (currentQuestion < game.length-1){
-              setCurrentQuestion((prev)=> prev +1 )
-
-
+        <button
+          className="btn"
+          onClick={() => {
+            if (answer === game[currentQuestion]?.answer) {
+              setCurrentQuestion((prev) => prev + 1);
+              alert("правильно!");
             } else {
               alert("Ты ошибся");
             }
@@ -46,15 +50,8 @@ function Game() {
         >
           Проверить
         </button>
-        <div
-          style={{
-            opacity: statusOfQustion ? 1 : 0,
-            transition: "opacity 0.7s ease-in-out",
-          }}
-        >
-          {game[currentQuestion]?.answer}
-        </div>
-        <button className="btn"
+        <button
+          className="btn"
           onClick={() => {
             if (currentQuestion < game.length - 1) {
               setCurrentQuestion((prev) => prev + 1);
