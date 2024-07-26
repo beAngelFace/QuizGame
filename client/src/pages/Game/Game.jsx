@@ -25,20 +25,18 @@ function Game() {
   };
 
   return (
+    <div className="main">
+      <div className="second">
+        <p>Квиз{id}</p>
+        <img className="imgr" src={game[currentQuestion]?.images} />
+        <div>{game[currentQuestion]?.question}</div>
+        <input className="input"></input>
 
-      <div className="main">
-        <div className="second">
-          <p>Викторина{id}</p>
-          <img className='imgr' src={game[currentQuestion]?.images}/>
-          <div>{game[currentQuestion]?.question}</div>
-          <input className="input"></input>
-          
-         
-          <button className='btn' onClick={()=> { 
-            if (currentQuestion < game.length-1){
-              setCurrentQuestion((prev)=> prev +1 )
-
-
+        <button
+          className="btn"
+          onClick={() => {
+            if (currentQuestion < game.length - 1) {
+              setCurrentQuestion((prev) => prev + 1);
             } else {
               alert("Ты ошибся");
             }
@@ -54,7 +52,8 @@ function Game() {
         >
           {game[currentQuestion]?.answer}
         </div>
-        <button className="btn"
+        <button
+          className="btn"
           onClick={() => {
             if (currentQuestion < game.length - 1) {
               setCurrentQuestion((prev) => prev + 1);
@@ -63,7 +62,7 @@ function Game() {
             }
           }}
         >
-          Дальше
+          Вперед
         </button>
       </div>
     </div>

@@ -5,7 +5,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <p>&copy; 2024 Andrei & Lika & Igor </p>
+      <p>&copy; Girls power </p>
     </div>
   );
 }

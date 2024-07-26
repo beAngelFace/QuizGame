@@ -22,12 +22,20 @@ function Welcome() {
           transition: "opacity 0.7s ease-in-out",
         }}
       >
-        Добро пожаловать на квиз!
+        Сейчас будет что-то очень интересное
       </h1>
       <div className="div">
         <Link to={"/menu"}>
           <button className="button">
-          <p style={{fontSize: '30px',  color: '#f0f0f0',textShadow: '6px 6px 6px rgba(0, 0, 0, 0.5)'}}>Для начала игры, нажми</p>
+            <p
+              style={{
+                fontSize: "30px",
+                color: "#f0f0f0",
+                textShadow: "6px 6px 6px rgba(0, 0, 0, 0.5)",
+              }}
+            >
+              Для начала игры, нажми
+            </p>
           </button>
         </Link>
       </div>

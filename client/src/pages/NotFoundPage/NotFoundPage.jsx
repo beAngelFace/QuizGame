@@ -2,7 +2,7 @@ import React from "react";
 import "./NotFoundPage.css";
 
 function NotFoundPage() {
-  return <div className="basic"><img src="https://avigroup.pro/wp-content/uploads/2021/08/404-4-min.jpg" alt="Описание картинки"/></div>;
+  return <div className="basic"><img src="https://ruweb.net/static/images/articles/o-chem-soobshchaet-oshibka-404-i-kak-ee-ispravit/image1.jpg" alt="Описание картинки"/></div>;
 }
 
 export default NotFoundPage;
