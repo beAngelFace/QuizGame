@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { Routes, Link, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Game from "../Game/Game";
 import Header from "../Header/Header";
@@ -26,15 +26,17 @@ function App() {
   return (
     <>
       <div className="general">
-        <Header></Header>
-        <Footer></Footer>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/menu" element={<Menu theme={theme} />} />
+            <Route path="/game/:id" element={<Game />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <Routes>
-        <Route path={"/"} element={<Welcome />} />
-        <Route path={"/menu"} element={<Menu theme={theme} />} />
-        <Route path={`/game/:id`} element={<Game />} />
-        <Route path={"*"} element={<NotFoundPage />} />
-      </Routes>
     </>
   );
 }
